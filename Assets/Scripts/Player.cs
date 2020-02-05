@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -50,4 +51,18 @@ public class Player : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+
+   void OnDestroy()
+   {
+       //If Player Dies, they lose a life
+       GameManager.instance.lives -= 1;
+       if (GameManager.instance.lives > 0)
+       {
+           GameManager.instance.Respawn();
+       }
+       else
+       {
+           Debug.Log("Game Over");
+       }
+   }
 }
