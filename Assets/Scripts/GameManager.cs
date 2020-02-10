@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public int lives = 3;
     public GameObject PlayerPrefab;
+    public GameObject Player;
+    public GameObject AsteroidPrefab;
+    public List<GameObject> enemiesList = new List<GameObject>();
     public void Awake()
     {
         if (instance == null)
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
-        Instantiate(PlayerPrefab);
+      Player = Instantiate(PlayerPrefab);
     }
 }
 
