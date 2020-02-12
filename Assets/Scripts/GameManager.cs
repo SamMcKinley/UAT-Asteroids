@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject AsteroidPrefab;
     public List<GameObject> enemiesList = new List<GameObject>();
+    public GameObject[] EnemyPrefabs;
     public void Awake()
     {
         if (instance == null)
