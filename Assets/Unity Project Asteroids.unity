@@ -391,9 +391,17 @@ MonoBehaviour:
   AsteroidPrefab: {fileID: 996816809298649331, guid: f3d2bd014ebef8d439c3c393bb6c7526,
     type: 3}
   enemiesList: []
-  EnemyPrefabs: []
+  EnemyPrefabs:
+  - {fileID: 3697281210538475688, guid: c37bb4eafa3551a42a0b12bfd1915295, type: 3}
+  - {fileID: 996816809298649331, guid: f3d2bd014ebef8d439c3c393bb6c7526, type: 3}
   maxEnemiesSpawnable: 3
-  spawnPoints: []
+  spawnPoints:
+  - {fileID: 1626846024}
+  - {fileID: 92140991}
+  - {fileID: 1670651244}
+  - {fileID: 1927546416}
+  - {fileID: 1871904038}
+  - {fileID: 2058432534}
 --- !u!1 &1626846023
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3426187745484597686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.63, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4033580853843566871}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4033580853843566869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 0.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.438, y: 0.497, z: 1}
   m_Children:
   - {fileID: 6554691469404366873}
@@ -130,6 +130,7 @@ MonoBehaviour:
   movementSpeed: 2
   BulletPrefab: {fileID: 4162828125724020310, guid: 604c4d9db6cbd464c8859c9624bd0ffe,
     type: 3}
+  FirePoint: {fileID: 6554691469404366873}
 --- !u!50 &4033580853843566856
 Rigidbody2D:
   serializedVersion: 4

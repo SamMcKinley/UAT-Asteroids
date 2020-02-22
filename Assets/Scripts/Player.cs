@@ -13,9 +13,16 @@ public class Player : MonoBehaviour
     public float movementSpeed = 1.0f;
     public GameObject BulletPrefab;
     public Transform FirePoint;
+
+    void Awake()
+    {
+        // constructor
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.Player = this.gameObject;
         tf = gameObject.GetComponent<Transform>();
     }
 
@@ -29,7 +36,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            tf.Rotate(0, 0, rotationSpeed * Time.deltaTime );
+            tf.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -42,34 +49,35 @@ public class Player : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
     }
 
-   public void Shoot()
-   {
-       Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation );
-   }
+    public void Shoot()
+    {
+        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+    }
 
-   void OnDestroy()
-   {
-       //If Player Dies, they lose a life
-       GameManager.instance.lives -= 1;
-       if (GameManager.instance.lives > 0)
-       {
-           GameManager.instance.Respawn();
-       }
-       else
-       {
-           Debug.Log("Game Over");
-       }
-   }
+    void OnDestroy()
+    {
+        // deconstructor
+    }
 
-   void OnCollisionEnter2D(Collision2D OtherObject)
-   {
-       Destroy(OtherObject.gameObject);
-       Destroy(this.gameObject);
-   }
+    public void Die()
+    {
+        //If Player Dies, they lose a life
+        GameManager.instance.lives -= 1;
+        if (GameManager.instance.lives > 0)
+        {
+            GameManager.instance.Respawn();
+        }
+        else
+        {
+            Debug.Log("Game Over");
+        }
+        GameManager.instance.DestroyAllEnemies();
+        Destroy(this.gameObject);
+    }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3697281210538475690}
   - component: {fileID: 3697281210538475689}
-  - component: {fileID: 3697281210538475691}
   - component: {fileID: 3697281210538475701}
   - component: {fileID: 3697281210538475700}
+  - component: {fileID: 1641382095}
   m_Layer: 0
   m_Name: Enemy Ship
   m_TagString: Untagged
@@ -83,20 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3697281210538475691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3697281210538475688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faaf86a7a4dfb054d9dd1c2f476015cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 90
-  movementSpeed: 2
 --- !u!50 &3697281210538475701
 Rigidbody2D:
   serializedVersion: 4
@@ -112,7 +98,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -231,3 +217,19 @@ PolygonCollider2D:
       - {x: -0.275, y: -1.3149999}
       - {x: -0.005, y: -1.285}
       - {x: 0.055, y: -1.265}
+--- !u!114 &1641382095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697281210538475688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63570994943e694882c5d4bed7be711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  target: {x: 0, y: 0, z: 0}
+  offset: 0
+  rotationSpeed: 90
